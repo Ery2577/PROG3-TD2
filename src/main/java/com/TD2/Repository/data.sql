@@ -1,4 +1,4 @@
-\c mini_dish_db
+-- \c mini_dish_db
 SET ROLE mini_dish_db_manager;
 
 -- Data into Dish table
