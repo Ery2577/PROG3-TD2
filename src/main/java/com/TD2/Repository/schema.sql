@@ -1,10 +1,9 @@
--- Supprime les tables si elles existent pour repartir sur de bonnes bases
 DROP TABLE IF EXISTS ingredient;
 DROP TABLE IF EXISTS dish;
 DROP TYPE IF EXISTS category_enum;
 DROP TYPE IF EXISTS dish_type_enum;
 
--- Création avec les noms EXACTS
+
 CREATE TYPE dish_type_enum AS ENUM ('START', 'MAIN', 'DESSERT');
 CREATE TYPE category_enum AS ENUM ('VEGETABLE', 'ANIMAL', 'MARINE', 'DAIRY', 'OTHER');
 
@@ -18,7 +17,7 @@ CREATE TABLE ingredient (
                             id SERIAL PRIMARY KEY,
                             name VARCHAR(255) NOT NULL,
                             price DOUBLE PRECISION,
-                            category category_enum, -- Ici le type est category_enum
+                            category category_enum,
                             id_dish INT REFERENCES dish(id)
 );
 
